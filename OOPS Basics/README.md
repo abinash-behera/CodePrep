@@ -11,8 +11,7 @@ Advantages
 
 Consists of state and behavior. It is an instance of a class. State of an object can be changed using the methods exposed by it.  
 e.g. Man  
-    *State* - Color, Name, Height, Weight, Age
-    *behavior* - Eats, Runs, Talks, Works
+    *State* - Color, Name, Height, Weight, Age; *behavior* - Eats, Runs, Talks, Works
 
 ## Class
 
@@ -106,7 +105,7 @@ From [Tutorials Point](http://www.tutorialspoint.com/java/java_polymorphism.htm)
 
 Note - Two methods have the same signature if they have the same name and argument types.  
 
-Method Overloading - Methods within the same class with different signatures. Overloaded methods are differentiated by the number and the type of the arguments passed into the method. The *return type* is not considered a part of this differentiation.
+Method Overloading - Methods within the same class with different signatures. Overloaded methods are differentiated by the number and the type of the arguments passed into the method. The *return type* is not considered as a part of this differentiation.
 
 [Method Overriding](https://docs.oracle.com/javase/tutorial/java/IandI/override.html) - Overriding is possible because of the ability of a reference variable to refer to any object of its declared type or any subtype of its declared type. A reference variable can be declared as a class or interface type.  
 *It is a compile-time error if an instance method overrides a static method.* Also, the access modifier of an overriding or hiding method must provide at least as much access as the overridden or hidden method.
@@ -196,17 +195,14 @@ Also, from [Java docs](https://docs.oracle.com/javase/tutorial/java/IandI/abstra
 
 Abstract | Interface
 -------- | ---------
-Abstract class can have abstract and non-abstract methods. | Interface can have only abstract methods.
-Abstract class doesn't support multiple inheritance. | Interface supports multiple inheritance.
+Abstract class can have abstract and non-abstract methods. | Interface can have only abstract methods (except for [static and default methods](https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html)).
 Abstract class can have final, non-final, static and non-static variables. | Interface has only static and final variables.
-Abstract class can have static methods, main method and constructor. | Interface can't have static methods, main method or constructor.
 Abstract class can provide the implementation of interface. | Interface can't provide the implementation of abstract class.
-The abstract keyword is used to declare abstract class. | The interface keyword is used to declare interface.
 
 ## Package
 
 Package is similar to a folder in an Operating System. It provides a namespace to organize related classes and interfaces.
 
 ## Composition
-* #### Is-a
-* #### Has-a
+* Is-a
+* Has-a

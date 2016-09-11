@@ -1,6 +1,8 @@
 ## Regex  
 java.util.regex API
 
+Follow [Java Docs](https://docs.oracle.com/javase/tutorial/essential/regex/index.html) & [Hackerrank](https://www.hackerrank.com/domains/regex/re-introduction/difficulty/all/page/1)
+
  Imp classes - [Pattern](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html), [Matcher](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html) and [PatternSyntaxException](https://docs.oracle.com/javase/8/docs/api/java/util/regex/PatternSyntaxException.html)
 
 Why does not Pattern have a public constructor? [Answer](http://stackoverflow.com/questions/13758740/java-pattern-class-doesnt-have-a-public-constructor-why)
@@ -55,7 +57,8 @@ Metacharacters - The metacharacters supported by the regex API are: ```<([{\^-=$
 There are two ways to force a metacharacter to be treated as an ordinary character:
 
 * precede the metacharacter with a backslash, or
-* enclose it within \Q (which starts the quote) and \E (which ends it).
+* enclose it within \Q (which starts the quote) and \E (which ends it).  
+*Need to escape backslash in Java (\\).*
 
 Construct	| Description
 --------- | -----------
@@ -68,3 +71,26 @@ Construct	| Description
 [a-z&&[^m-p]]	| a through z, and not m through p: **[a-lq-z]** (subtraction)
 
 *Here class means a character class which specifies the characters that will successfully match a single character from a given input string.*
+
+Regex | Description
+----- | -----------
+. | Matches any character except for a new line
+\s | Matches any whitespace character [ \r\n\t\f ]
+\S | Matches any non-whitespace character
+^ | Matches the position at the **start** of a string
+$ | Matches the position at the **end** of a string
+\w | Will match any word character; Word characters include alphanumeric characters (**a-z**, **A-Z** and **0-9**) and underscores (**_**)
+\W | Matches non-word character
+\d | Matches any digit [0-9]
+\D | Matches any character that is not a digit
+
+## Repetitions
+
+* **{x}** will match exactly repetitions of character/character class/groups
+* **{x,y}** will match between and (both inclusive) repetitions of character/character class/group.  
+e.g. [xyz]{5,} : It will match the characters x, y or z 5 or more times.
+* **+** will match one or more repetitions of character/character class/group.
+* **\*** will match zero or more repetitions of character/character class/group.
+
+
+Try [this](https://www.hackerrank.com/challenges/matching-ending-items). The trick here is that the question states the String only consists of lower and upper case characters. So, [a-zA-Z] does not work as it passes 1asd4, 3asd and asd9. We have to make it ^[a-zA-Z]$.

@@ -86,11 +86,11 @@ $ | Matches the position at the **end** of a string
 
 ## Repetitions
 
-* **{x}** will match exactly repetitions of character/character class/groups
+* **{x}** will match exactly repetitions of character/character class/group.
 * **{x,y}** will match between and (both inclusive) repetitions of character/character class/group.  
 e.g. [xyz]{5,} : It will match the characters x, y or z 5 or more times.
 * **+** will match one or more repetitions of character/character class/group.
-* **\*** will match zero or more repetitions of character/character class/group.
+* * will match zero or more repetitions of character/character class/group.
 
 
 Try [this](https://www.hackerrank.com/challenges/matching-ending-items). The trick here is that the question states the String only consists of lower and upper case characters. So, [a-zA-Z] does not work as it passes 1asd4, 3asd and asd9. We have to make it ^[a-zA-Z]$.
